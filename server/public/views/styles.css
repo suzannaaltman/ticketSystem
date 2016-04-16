@@ -1,0 +1,26 @@
+header {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  margin-top: 40px;
+}
+
+input {
+  width: 80px;
+  border-radius: 4px;
+}
+
+.btn {
+  width: auto;
+  margin-left: 30px;
+}
+
+.inputs {
+  display: inline-block;
+  text-align: left;
+}
