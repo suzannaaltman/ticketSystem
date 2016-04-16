@@ -8,14 +8,14 @@
     <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="views/styles.css" rel="stylesheet" />
   </head>
-  <header>
+  <header class="row">
     <h1>Tickets, Get Your Tickets Here!</h1>
   </header>
-  <body ng-controller="MainController as controller">
+  <body ng-controller="FormController">
     <h2>Submit a new ticket</h2>
     <div class="row">
-      <div class='col-md-3'></div>
-      <form ng-submit="" class="inputs col-md-4">
+      <div class='col-md-4'></div>
+      <form ng-submit="sendData()" class="inputs col-md-4">
         <label>Name:</label>
         <input type="text" class="form-control" ng-model="ticket.name" aria-describedby="sizing-addon1"></input>
         <br />
@@ -36,8 +36,21 @@
         <br />
         <input type="submit"></input>
       </form>
-      <div class='col-md-5'></div>
+      <div class='col-md-4'></div>
     </div>
-
+    <section class="ticketHolder">
+      <div><h4>This is where the tickets will go.</h4></div>
+      <div class="center-block">
+        <div class="well col-md-3" ng-repeat="ticket in tickets">
+          Name: {{ticket.name}} <br />
+          Type: {{ticket.type}} <br />
+          Priority: {{ticket.priority}} <br />
+          Description: {{ticket.description}} <br />
+          Assignee: {{ticket.assignee}} <br />
+          Reporter: {{ticket.reporter}} <br />
+          <button>Completed</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

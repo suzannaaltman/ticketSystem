@@ -1,4 +1,5 @@
 header {
+  background-color: lightblue;
   text-align: center;
 }
 
@@ -8,6 +9,7 @@ h2 {
 
 form {
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 input {
@@ -15,12 +17,27 @@ input {
   border-radius: 4px;
 }
 
-.btn {
-  width: auto;
-  margin-left: 30px;
+button {
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .inputs {
   display: inline-block;
   text-align: left;
+}
+
+.row {
+  text-align: center;
+}
+
+.center-block {
+  display: table;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.well {
+  margin-left: 20px;
 }
