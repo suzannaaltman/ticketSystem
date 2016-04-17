@@ -7,7 +7,8 @@ var ticketSchema = new Schema({
   priority: {type: String, required: true},
   description: {type: String, required: true},
   assignee: {type: String, required: true},
-  reporter: {type: String, required: true}
+  reporter: {type: String, required: true},
+  created: {type: Date}
 })
 
 var Ticket = mongoose.model('Ticket', ticketSchema);

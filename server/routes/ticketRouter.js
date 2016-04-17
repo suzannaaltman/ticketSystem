@@ -24,7 +24,8 @@ router.post('/add', function(request, response){
     priority: data.priority,
     description: data.description,
     assignee: data.assignee,
-    reporter: data.reporter
+    reporter: data.reporter,
+    created: new Date()
   })
 
   newTicket.save(function(err){
@@ -37,5 +38,14 @@ router.post('/add', function(request, response){
     }
   })
 })
+
+router.delete('/remove/:id', function(request, response){
+  console.log('deleted object');
+  Ticket.findOneAndRemove({_id: request.params.id}, function(err) {
+    if(err) {console.log('delete err', err);}
+  });
+  response.sendStatus(200);
+})
+
 
 module.exports = router;

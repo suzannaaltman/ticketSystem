@@ -39,7 +39,7 @@
       <div class='col-md-4'></div>
     </div>
     <section class="ticketHolder">
-      <div><h4>This is where the tickets will go.</h4></div>
+      <h4>Open tickets:</h4>
       <div class="center-block">
         <div class="well col-md-3" ng-repeat="ticket in tickets">
           Name: {{ticket.name}} <br />
@@ -48,7 +48,8 @@
           Description: {{ticket.description}} <br />
           Assignee: {{ticket.assignee}} <br />
           Reporter: {{ticket.reporter}} <br />
-          <button>Completed</button>
+          Created: {{ticket.created}} <br />
+          <button ng-click="removeTicket(ticket)">Completed</button>
         </div>
       </div>
     </section>

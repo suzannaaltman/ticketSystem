@@ -7,6 +7,10 @@ h2 {
   text-align: center;
 }
 
+h4 {
+  margin-left: 20px;
+}
+
 form {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -32,10 +36,10 @@ button {
   text-align: center;
 }
 
-.center-block {
+.ticketHolder {
+  width: 80%;
   display: table;
   margin-left:auto;
-  margin-right:auto;
 }
 
 .well {

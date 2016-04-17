@@ -23,5 +23,15 @@ app.controller('FormController', ['$scope', '$http', function($scope, $http){
     })
   }
 
+  $scope.removeTicket = function(ticket) {
+    console.log('Ticket is', ticket);
+    id = ticket._id;
+    console.log('/ticket/remove/' +id);
+    $http.delete('/ticket/remove/' +id).then(function(response){
+      console.log('deleted', ticket);
+      $scope.getTickets();
+    })
+  }
+
   $scope.getTickets();
 }])
