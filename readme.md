@@ -1,11 +1,11 @@
-<!-- In this weekend assignment you will be creating a ticket management system using the MEAN Stack with the option to swap out AngularJS with jQuery. If you choose to use AngularJS, your controllers should use the 'controller as' syntax. Your app's index.html should load with a series of inputs with the following fields:
+In this weekend assignment you will be creating a ticket management system using the MEAN Stack with the option to swap out AngularJS with jQuery. If you choose to use AngularJS, your controllers should use the 'controller as' syntax. Your app's index.html should load with a series of inputs with the following fields:
 
 Name (String)
 Type (String)
 Priority (String)
 Description (String)
 Assignee (String)
-Reporter (String) -->
+Reporter (String)
 
 The following fields should be on the Ticket model (ticket.js), but updated on the server:
 Created (Date)
