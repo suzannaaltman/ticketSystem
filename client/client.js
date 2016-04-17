@@ -19,6 +19,7 @@ app.controller('FormController', ['$scope', '$http', function($scope, $http){
     console.log('sendData called');
     $http.post('/ticket/add', $scope.ticket).then(function(response){
       console.log(response);
+      $scope.ticket = {};
       $scope.getTickets();
     })
   }

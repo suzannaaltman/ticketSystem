@@ -25,7 +25,8 @@ router.post('/add', function(request, response){
     description: data.description,
     assignee: data.assignee,
     reporter: data.reporter,
-    created: new Date()
+    created: new Date(),
+    updated: new Date()
   })
 
   newTicket.save(function(err){
