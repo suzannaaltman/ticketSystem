@@ -2,37 +2,43 @@
 <html ng-app="ticketApp">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DoTheThings</title>
     <script src="vendor/angular/angular.min.js"></script>
     <script src="assets/scripts/client.min.js"></script>
     <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="vendor/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="views/styles.css" rel="stylesheet" />
   </head>
-  <header class="row">
-    <h1>Tickets, Get Your Tickets Here!</h1>
-  </header>
-  <body ng-controller="FormController">
+  <body ng-controller="FormController as cont">
+    <div class="row bar"></div>
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron">
+      <h1>Tickets, Get Your Tickets Here!</h1>
+      </div>
+    </div>
     <h2>Submit a new ticket</h2>
     <div class="row">
       <div class='col-md-4'></div>
-      <form ng-submit="sendData()" class="inputs col-md-4">
+      <form ng-submit="cont.sendData()" class="inputs col-md-4">
         <label>Ticket Name:</label>
-        <input type="text" class="form-control" ng-model="ticket.name" aria-describedby="sizing-addon1"></input>
+        <input type="text" class="form-control" ng-model="cont.ticket.name" aria-describedby="sizing-addon1"></input>
         <br />
         <label>Type:</label>
-        <input type="text" class="form-control" ng-model="ticket.type" aria-describedby="sizing-addon1"></input>
+        <input type="text" class="form-control" ng-model="cont.ticket.type" aria-describedby="sizing-addon1"></input>
         <br />
         <label>Priority:</label>
-        <input type="text" class="form-control" ng-model="ticket.priority" aria-describedby="sizing-addon1"></input>
+        <input type="text" class="form-control" ng-model="cont.ticket.priority" aria-describedby="sizing-addon1"></input>
         <br />
         <label>Description:</label>
-        <input type="text" class="form-control" ng-model="ticket.description" aria-describedby="sizing-addon1"></input>
+        <input type="text" class="form-control" ng-model="cont.ticket.description" aria-describedby="sizing-addon1"></input>
         <br />
         <label>Assignee:</label>
-        <input type="text" class="form-control" ng-model="ticket.assignee" aria-describedby="sizing-addon1"></input>
+        <input type="text" class="form-control" ng-model="cont.ticket.assignee" aria-describedby="sizing-addon1"></input>
         <br />
         <label>Reporter:</label>
-        <input type="text" class="form-control" ng-model="ticket.reporter" aria-describedby="sizing-addon1"></input>
+        <input type="text" class="form-control" ng-model="cont.ticket.reporter" aria-describedby="sizing-addon1"></input>
         <br />
         <input type="submit"></input>
       </form>
@@ -40,8 +46,8 @@
     </div>
     <h2>Open tickets:</h2>
     <div class="ticketHolder">
-      <container class="container">
-        <div class="well col-md-3" ng-repeat="ticket in tickets">
+      <container>
+        <div class="well col-md-3" ng-repeat="ticket in cont.tickets">
           Name: {{ticket.name}} <br />
           Type: {{ticket.type}} <br />
           Priority: {{ticket.priority}} <br />
@@ -49,7 +55,7 @@
           Assignee: {{ticket.assignee}} <br />
           Reporter: {{ticket.reporter}} <br />
           Created: {{ticket.created}} <br />
-          <button ng-click="removeTicket(ticket)">Completed</button>
+          <button ng-click="cont.removeTicket(ticket)">Completed</button>
         </div>
       </container>
     </div>

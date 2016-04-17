@@ -1,38 +1,38 @@
 var app = angular.module('ticketApp', []);
 
 //ng-repeat ticket in tickets
-app.controller('FormController', ['$scope', '$http', function($scope, $http){
+app.controller('FormController', ['$http', function($http){
   console.log('Controller called');
+  var controller = this;
+  controller.ticket = {};
+  controller.tickets = [];
 
-  $scope.ticket = {};
-  $scope.tickets = [];
-
-  $scope.getTickets = function(){
+  controller.getTickets = function(){
     console.log('getTickets called');
     $http.get('ticket/all').then(function(response){
       console.log(response);
-      $scope.tickets = response.data;
+      controller.tickets = response.data;
     })
   }
 
-  $scope.sendData = function(){
+  controller.sendData = function(){
     console.log('sendData called');
-    $http.post('/ticket/add', $scope.ticket).then(function(response){
+    $http.post('/ticket/add', controller.ticket).then(function(response){
       console.log(response);
-      $scope.ticket = {};
-      $scope.getTickets();
+      controller.ticket = {};
+      controller.getTickets();
     })
   }
 
-  $scope.removeTicket = function(ticket) {
+  controller.removeTicket = function(ticket) {
     console.log('Ticket is', ticket);
     id = ticket._id;
     console.log('/ticket/remove/' +id);
     $http.delete('/ticket/remove/' +id).then(function(response){
       console.log('deleted', ticket);
-      $scope.getTickets();
+      controller.getTickets();
     })
   }
 
-  $scope.getTickets();
+  controller.getTickets();
 }])
