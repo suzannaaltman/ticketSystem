@@ -1,6 +1,5 @@
 var express = require('express');
 var Ticket = require('../../models/ticketModel');
-var moment = require('moment');
 var router = express.Router();
 
 router.get('/all', function(request, response){
